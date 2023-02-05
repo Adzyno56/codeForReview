@@ -1,6 +1,6 @@
 <?php
 /** Установка разделов товарам */
-private
+
 function setSectionsForProducts()
 {
 

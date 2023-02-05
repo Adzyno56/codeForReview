@@ -21,9 +21,9 @@ class BaikalService
     }
 
     /**
-     * Проверка статуса доставки
+     * Запрос данных по API Байкала
      * @param $nomenclature
-     * @return true|false
+     * @return array
      */
 
     public function getOrderStatus($nomenclature)

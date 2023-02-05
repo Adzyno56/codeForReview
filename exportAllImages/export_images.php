@@ -126,6 +126,7 @@ foreach ($arCatalogSections as $key => $arSection) {
 $writer->writeData(['Кол-во товаров с изображениями', $countProdsWithImages]);
 $writer->saveFile();
 
+// Метод копирования изображения
 function copyImage($writer, $imagePath, $pathProduct, $productArticle, $counter = 0) {
     if (mb_strripos($imagePath, 'jpg') !== false) {
         copy($_SERVER['DOCUMENT_ROOT'] . $imagePath, $pathProduct . '/' . $productArticle . '_' . $counter . '.jpg');

@@ -7,6 +7,7 @@
     ];
 }*/
 
+// Создание кнопки для менеджеров
 public function addButton() {
     global $USER;
     $userId = $USER->GetID();

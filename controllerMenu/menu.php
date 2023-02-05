@@ -76,7 +76,7 @@ class Menu extends Controller {
             $depthLevel = intval($this->getParameter("depth_lvl"));
 
             if (empty($typemenu)) {
-                throw new Exception(Loc::getMessage("CITFACT_REST_SERVICE_MENU_NOT_FOUND"));
+                throw new Exception(Loc::getMessage("REST_SERVICE_MENU_NOT_FOUND"));
             }
             if (empty($depthLevel)) {
                 $depthLevel = self::DEFAULT_DEPTH_LVL;

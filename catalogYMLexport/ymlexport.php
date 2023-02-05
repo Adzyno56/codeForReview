@@ -71,6 +71,9 @@ class CatalogYmlExport extends CatalogExport {
 
     }
 
+    /**
+     * Запись заголовков
+     */
     protected function writeHeader()
     {
         $this->writer->startElement("yml_catalog");
@@ -107,6 +110,9 @@ class CatalogYmlExport extends CatalogExport {
 
     }
 
+    /**
+     * Получение и запись разделов
+     */
     protected function writeSections(){
         $arCatalogSections = SectionTable::getList([
             'filter' => [
@@ -148,6 +154,9 @@ class CatalogYmlExport extends CatalogExport {
         $this->writer->endElement();
     }
 
+    /**
+     * Запись товаров
+     */
     protected function write(array $iblockElement, int $columnStart = 1)
     {
         $rowData = [];
@@ -288,6 +297,9 @@ class CatalogYmlExport extends CatalogExport {
         $this->writer->endElement();
     }
 
+    /**
+     * Сохранение файла
+     */
     protected function saveFile()
     {
         $this->writer->endElement();

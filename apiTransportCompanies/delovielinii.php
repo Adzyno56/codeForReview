@@ -9,6 +9,9 @@ class DelovyeLiniiKabinet {
         $this->appKey = '5555555555555555555555';
     }
 
+    /**
+     * Запрос данных и получение результата
+     */
     public function request($op, $params = array()){
         $url = 'https://api.dellin.ru/v2/'.$op.'.json';
         $body = $params;
@@ -29,6 +32,9 @@ class DelovyeLiniiKabinet {
 
     }
 
+    /**
+     * Авторизация в сессию
+     */
     function auth($login, $password){
         $url = 'https://api.dellin.ru/v1/customers/login.json';
         $body = array(
