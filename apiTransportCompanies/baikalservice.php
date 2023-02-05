@@ -8,7 +8,7 @@ use \Bitrix\Main\Web\HttpClient;
 
 class BaikalService
 {
-    private const APP_KEY = '453453453453453535';
+    private const APP_KEY = '5555555555555555555555';
     private const MAIN_URL = 'https://api.baikalsr.ru/v1/';
     private const API_URL = 'tracking?number=';
 

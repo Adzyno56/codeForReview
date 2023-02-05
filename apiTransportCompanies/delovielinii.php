@@ -6,7 +6,7 @@ class DelovyeLiniiKabinet {
     private $session, $appKey;
 
     function __construct(){
-        $this->appKey = 'C6CF1E38-BE4C-44C7-802C-888C325D5F22';
+        $this->appKey = '5555555555555555555555';
     }
 
     public function request($op, $params = array()){

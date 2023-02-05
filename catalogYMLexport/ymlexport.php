@@ -170,19 +170,19 @@ class CatalogYmlExport extends CatalogExport {
         foreach ($this->headerCodes as $value => $key) {
             $propertyValue = $iblockElement[$value] ?? '';
 
-            // Пока непонятно какую цену брать + цены и статус только для профильных выгрузок
+
             if ($value == self::PRICE_FIELD) {
                 $key = "price";
             } elseif ($value == self::BASE_PRICE_FIELD){
                 $key = "oldprice";
             } elseif ($value == self::STATUS_FIELD) {
-                $key = Loc::getMessage("CITFACT_REST_CATALOG_EXPORT_STATUS_FIELD_NAME");
+                $key = Loc::getMessage("REST_CATALOG_EXPORT_STATUS_FIELD_NAME");
             }
 
 
             if (!is_array($propertyValue)) {
                 $propertyValue = strip_tags($propertyValue);
-                if (!empty($propertyValue)) { // - не писать пустые атрибуты в выгрузку
+                if (!empty($propertyValue)) {
                     $rowData[$key] = empty($propertyValue) ? null : $propertyValue;
                 }
                 continue;
@@ -193,8 +193,8 @@ class CatalogYmlExport extends CatalogExport {
                 continue;
             }
             //  обработка множественных значений, для изображений
-            foreach ($propertyValue as $element) { // множественные значения
-                $rowData[$key][] = empty($element) ? $element : Helper::prepareFullWebAddress($element); // Только ли у изображений? Проверить
+            foreach ($propertyValue as $element) {
+                $rowData[$key][] = empty($element) ? $element : Helper::prepareFullWebAddress($element);
             }
 
         }
@@ -205,7 +205,7 @@ class CatalogYmlExport extends CatalogExport {
 
         /**
          * запись в xml
-         * @todo Надо подумать над обработкой множественных св-тв,если есть помимо изображений
+         *
          */
 
         $this->writer->startElement("offer");
